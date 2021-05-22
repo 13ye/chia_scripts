@@ -34,3 +34,13 @@ MegaCli -PDOnline  -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL
 
 # 清除所有Ld配置
 megacli -CfgLdDel -LAll -aAll
+
+# 组单盘Raid0(r0)
+megacli -CfgLdAdd -r0 [252:0] -a0
+megacli -CfgLdAdd -r0 [252:0] -a1
+# 扫描foreign配置个数
+MegaCli64 -cfgforeign -scan -a0
+# 引入foreign配置（之前配置过raid0但是重新插拔后需要重新引入）
+MegaCli -CfgForeign -import -a0
+# 清除foreign配置
+MegaCli64 -cfgforeign -clear -a0
