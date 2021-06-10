@@ -11,6 +11,10 @@ sensors
 apt install alien
 alien mypkgname.rpm
 dpkg -i mypkgname.deb
+/opt/MegaRAID/MegaCli/MegaCli64 --version
+# error occurs on ub20.04
+sudo apt-get install libncurses5 libncurses5:i386
+
 # 查看适配器所有信息 非常详细
 megacli -AdpAllInfo -aAll
 # 查看逻辑磁盘状态和设置
