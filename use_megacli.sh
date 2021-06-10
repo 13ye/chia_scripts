@@ -7,6 +7,10 @@ apt install lm-sensors
 sensors-detect
 sensors
 
+# 安装megacli
+apt install alien
+alien mypkgname.rpm
+dpkg -i mypkgname.deb
 # 查看适配器所有信息 非常详细
 megacli -AdpAllInfo -aAll
 # 查看逻辑磁盘状态和设置
